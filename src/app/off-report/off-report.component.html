@@ -1,61 +1,37 @@
 <div class="row">
   <p *ngFor="let al of alerts">
 
-   <!-- <ngb-alert type="danger" [dismissible]="false">
+    <ngb-alert type="danger" [dismissible]="false">
       <strong>Alert!</strong> {{ al.outagemessage }}: {{al.system}}
       from: {{al.outagestarttime}} to: {{al.outageendtime}} on: {{al.outagedate}}
       slackchannel: {{al.slackchannel}}. Posted by: {{al.contactperson}} on: {{al.createddate}}
-    </ngb-alert>-->
+    </ngb-alert>
 
   </p>
 </div>
 
 <div class="row">
-
   <div class="col-md-12">
     <div class="pull-right">
-
-      <!--<form class="form-inline">
-        <div class="form-group">
-          &lt;!&ndash;<input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-          <button class="input-group-addon" (click)="d.toggle()" type="button">
-            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-          </button>&ndash;&gt;
-          <input #box class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (ngModelChange)="update($event)"> <span
-          class="input-group-addon" style="width: 50px; padding: 8px;">
-                                    <button (click)="d.toggle()" type="button" style="border:0px; background: none;">
-                                            <i class="fa fa-calendar-check-o " aria-hidden="true"
-                                               style="color:#302727;"></i>
-                                    </button>														</span>
-        </div>
-
-      </form>
-      <p style="margin-top: 5px">{{box.value}}</p>
-      <hr/>-->
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd"
-                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <input #box class="form-control" placeholder="yyyy-mm-dd"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (ngModelChange)="update($event)">
             <button class="input-group-addon" (click)="d.toggle()" type="button">
               <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
             </button>
           </div>
         </div>
       </form>
-
       <hr/>
-      <pre>Model: {{ model | json }}</pre>
-      <!-- <pre>Model: {{ model | json }}</pre> -->
+      <p style="margin-top: 5px">{{box.value}}</p>
     </div>
   </div>
 </div>
-
-<div class="row">
+<!--<div class="row">
   <div class="col-md-12">
-    <!--<table class="table table-bordered table-striped _ttable custome-table"
+    <table class="table table-bordered table-striped _ttable custome-table"
            [mfData]="this.reports | report :filterQuery" #mf="mfDataTable"
            [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
       <thead class="tableHeaderRow ">
@@ -145,9 +121,9 @@
 
       </tbody>
 
-    </table>-->
+    </table>
   </div>
-</div>
+</div>-->
 
 <div class="row">
 
