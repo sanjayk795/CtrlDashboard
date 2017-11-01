@@ -1,41 +1,48 @@
 <div class="clearfix"></div>
+<div class="container">
+<div class="row">
+<div class="col-sm-6 offset-md-3">
 <div class="middle-box text-center loginscreen animated fadeInDown">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3>Dashboard Login</h3></div>
-    <div class="panel-body">
+  <div class="card custome-panel">
+    <div class="card-header">
+      <h5 class="white-text">Dashboard Login</h5></div>
+    <div class="card-block">
       <list-errors [errors]="errors"></list-errors>
       <form class="m-t" role="form" [formGroup]="authForm" (ngSubmit)="submitForm()">
         <fieldset [disabled]="isSubmitting">
           <div class="form-group">
-            <fieldset class="form-group">
+            <div class="input-group">
+             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
               <input
                 formControlName="email"
                 placeholder="Email"
-                class="form-control form-control-lg"
+                class="form-control"
                 type="text"/>
-            </fieldset>
+            </div>
           </div>
           <div class="form-group">
 
-            <fieldset class="form-group">
+            <div class="input-group">
+             <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
               <input
                 formControlName="password"
                 placeholder="Password"
-                class="form-control form-control-lg"
+                class="form-control"
                 type="password"/>
-            </fieldset>
+            </div>
 
           </div>
+		  <div class="form-group">
           <div class="row">
-            <div class="col-md-6">
-              <button class="btn btn-lg btn-primary pull-xs-right" [disabled]="!authForm.valid" type="submit">
+            <div class="col-md-6 text-left">
+              <button class="btn btn-primary" [disabled]="!authForm.valid" type="submit">
                 {{ title }}
               </button>
             </div>
             <div class="col-md-6">
               <a href="#" class="pull-right">Forgot password?</a></div>
           </div>
+		  </div>
           <div class="row">
             <div class="col-md-12">
               <hr>
@@ -46,11 +53,13 @@
         </fieldset>
       </form>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <button class="btn btn-primary" (click)="doLogin()">Go To Admin</button>
     </div>
 
   </div>
 </div>
-
+</div>
+	</div>
+</div>
 
