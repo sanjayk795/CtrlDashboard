@@ -10,6 +10,7 @@ import {SalesReportModule} from './sales-report/sales-report.module';
 import {FullpriceReportModule} from './fullprice-report/fullprice-report.module';
 import {AllReportModule} from './all-report/all-report.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {DataTableModule} from 'angular2-datatable';
 
 import {
     ApiService,
@@ -42,7 +43,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: fals
         OffReportModule,
         SalesReportModule,
         FullpriceReportModule,
-        AllReportModule
+        AllReportModule,
+        DataTableModule
     ],
     providers: [
         ApiService,
