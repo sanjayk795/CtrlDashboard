@@ -4,7 +4,9 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false,
-  api_url: 'http://localhost:8000/assets/mock',
-  formate: '.json'
+    production: false,
+    api_url: 'http://localhost:8000/assets/mock',
+    off_report_path: '/reports/off-report.json',
+    login_path: '/users/login.json',
+    login_auth_path: '/users/user.json'
 };
