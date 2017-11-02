@@ -41,35 +41,64 @@
           Home
         </a>
       </li>
+        <!--<li class="nav-item" *ngFor="let route of currentUser.dashboards">
+            <a class="nav-link"
+               routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }">
+                {{route}}
+            </a>
+        </li>-->
 
       <li class="nav-item">
         <a class="nav-link"
-           routerLink="/off-report"
+           routerLink="/certified-report"
            routerLinkActive="active">
-          &nbsp;OffPrice
+          &nbsp; Certified Report
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link"
-           routerLink="/sales-report"
+           routerLink="/selfservice-report"
            routerLinkActive="active">
-          &nbsp;Sales
+          &nbsp; Self-Service Report
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link"
            routerLink="/full-report"
            routerLinkActive="active">
-          &nbsp;FullPrice
+          &nbsp;
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link"
-           routerLink="/all-report"
+           routerLink="/report-availability"
            routerLinkActive="active">
-          &nbsp;All Reports
+          &nbsp;Report Availability
         </a>
       </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/data-quality"
+               routerLinkActive="active">
+                &nbsp;Data Quality
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/data-dictionary"
+               routerLinkActive="active">
+                &nbsp;Data Dictionary
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/training"
+               routerLinkActive="active">
+                &nbsp;Training
+            </a>
+        </li>
 
 
       <li class="nav-item">

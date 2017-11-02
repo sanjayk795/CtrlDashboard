@@ -115,7 +115,6 @@ export class OffReportComponent implements OnInit {
                 this.reports = this.rtemp;
                 this.data = this.reports;
                 this.length = this.data.length;
-                console.log(this.reports);
                 for (const report of this.data) {
                     this.rows.push(report);
                 }
