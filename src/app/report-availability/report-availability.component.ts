@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportAvailabilityComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('I am in ReportAvailabilityComponent');
+  }
 
   ngOnInit() {
   }
-
 }

@@ -5,10 +5,6 @@ import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
 import {HomeModule} from './home/home.module';
 import {LogoutModule} from './logout/logout.module';
-import {OffReportModule} from './off-report/off-report.module'
-import {SalesReportModule} from './sales-report/sales-report.module';
-import {FullpriceReportModule} from './fullprice-report/fullprice-report.module';
-import {AllReportModule} from './all-report/all-report.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {DataTableModule} from 'angular2-datatable';
 import {DataDictionaryModule} from './data-dictionary/data-dictionary.module';
@@ -46,10 +42,6 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: fals
         SharedModule,
         NgbModule.forRoot(),
         LogoutModule,
-        OffReportModule,
-        SalesReportModule,
-        FullpriceReportModule,
-        AllReportModule,
         DataTableModule,
         DataDictionaryModule,
         DataQualityModule,
