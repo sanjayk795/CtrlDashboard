@@ -1,6 +1,8 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {DataTableModule} from 'angular2-datatable';
 import {AuthGuard, SharedModule} from '../shared';
 import {ReportAvailabilityComponent} from './report-availability.component';
 import {GenericReportComponent} from './component/generic-report-component';
@@ -22,7 +24,9 @@ const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
     imports: [
         CommonModule,
         SharedModule,
-        reportAvailabilityRouting
+        reportAvailabilityRouting,
+        NgbModule,
+        DataTableModule
     ],
     declarations: [ReportAvailabilityComponent, GenericReportComponent]
 })
