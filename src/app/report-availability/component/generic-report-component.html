@@ -1,4 +1,4 @@
-<div> i am rendering data  --    {{routeUrl}}</div>
+<div style="margin:-20px 0 10px 0"> i am rendering data  --    {{routeUrl}}</div>
 <div class="container">
     <div class="row">
         <p *ngFor="let al of alerts">
@@ -9,26 +9,12 @@
              </ngb-alert>
         </p>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="pull-right">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input #box class="form-control" placeholder="yyyy-mm-dd"
-                                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
-                                   (ngModelChange)="update($event)">
-                            <button class="input-group-addon" (click)="d.toggle()" type="button">
-                                <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <hr/>
-                <p style="margin-top: 5px">{{box.value}}</p>
-            </div>
-        </div>
-    </div>
+   
+	<div class="row">
+	<div class="col-md-12">
+	
+	</div>
+	</div>
     <div class="row">
         <table class="table table-striped" [mfData]="reports | dataFilter : filterQuery" #mf="mfDataTable"
                [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">

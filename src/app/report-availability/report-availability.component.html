@@ -1,41 +1,49 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-toggleable-md">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <ul class="navbar-nav ">
-                    <li class="nav-item active" style="margin-left: 15px;">
-                        <a class=""
+    <div class="row">        		
+			<div class="col-md-6">
+                         
+				<div id="tab" class="btn-group" data-toggle="buttons-radio">
+				
+                        <a class="btn btn-large btn-success active"
                            routerLink='off-price'>
                             OffPrice
                         </a>
-                    </li>
-
-                    <li class="nav-item active" style="margin-left: 15px;">
-                        <a class=""
+                   
+                        <a class="btn btn-large btn-success"
                            routerLink='full-price'>
                             FullPrice
                         </a>
-                    </li>
-                    <li class="nav-item active" style="margin-left: 15px;">
-                        <a class=""
+                    
+                        <a class="btn btn-large btn-success"
                            routerLink='supply-chain'>
                             Supply Chain
                         </a>
-                    </li>
-                    <li class="nav-item active" style="margin-left: 15px;">
-                        <a class=""
+                    
+                        <a class="btn btn-large btn-success"
                            routerLink='sales'>
                             Sales
                         </a>
-                    </li>
-                </ul>
-            </nav>
+                                
+            </div>
+                
+            
         </div>
+		<div class="col-md-6"> <div class="pull-right">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input #box class="form-control" placeholder="yyyy-mm-dd"
+                                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+                                   (ngModelChange)="update($event)">
+                            <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <hr/>
+                <p style="margin-top: 5px">{{box.value}}</p>
+            </div></div>
     </div>
 
 <router-outlet></router-outlet>
