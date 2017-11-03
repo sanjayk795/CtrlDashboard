@@ -56,6 +56,9 @@ export class GenericReportComponent implements OnInit {
     public temp;
     public rtemp;
     public jobs: Array<any>[] = [];
+    jobid: number;
+    reportid: number;
+    public edited = false;
 
     public constructor(private reportservice: ReportService, private route: ActivatedRoute,
                        private http: Http, private router: Router) {
@@ -141,6 +144,21 @@ export class GenericReportComponent implements OnInit {
             console.log(this.alerts);
           }
         );*/
+    }
+    onShow(event, id, reportid){
+        //show box msg
+        this.reportid = reportid;
+        this.jobid = id;
+        this.edited = true;
+        //wait 3 Seconds and hide
+        setTimeout(function() {
+            this.edited = false;
+            console.log(this.edited);
+        }.bind(this), 30000);
+    }
+
+    onHide(){
+        this.edited = false;
     }
 
 }

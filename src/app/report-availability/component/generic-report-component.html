@@ -29,8 +29,8 @@
             </div>
         </div>
     </div>
-   <!-- <div class="row">
-        <table class="table table-striped" [mfData]="reports" #mf="mfDataTable"
+    <div class="row">
+        <table class="table table-striped" [mfData]="reports | dataFilter : filterQuery" #mf="mfDataTable"
                [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
             <thead class="tableHeaderRow ">
             <tr>
@@ -54,7 +54,13 @@
                 </th>
             </tr>
             </thead>
-            <tbody>
+
+<!--
+        <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+               [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+
+-->
+        <tbody>
             <tr *ngFor="let item of data">
                 <td style="padding-bottom: 1px">
                     <div class="col-md-12">
@@ -80,9 +86,9 @@
                                     <strong class="popOverDisplay">Start:{{job.jobstarttime}}
                                         End:{{job.jobendtime}}</strong>
                                 </ng-template>
-
+<!--
                                 <h5 (click)="onShow($event,job.jobid,report.reportid)" class="panel"
-                                    :hover>{{job.jobname }}</h5>
+                                    :hover>{{job.jobname }}</h5>-->
                             </div>
 
                                 <div class="jobdata-detail rdiv"
@@ -107,12 +113,9 @@
                 <td></td>
             </tr>
             </tbody>
-            <tfoot>
-
-            </tfoot>
         </table>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <h1 class="slaheader">SLA Compliance</h1>
         <div class="col-md-12" *ngFor="let sla of slaData">
             <table class="table ">

@@ -6,6 +6,7 @@ import {DataTableModule} from 'angular2-datatable';
 import {AuthGuard, SharedModule} from '../shared';
 import {ReportAvailabilityComponent} from './report-availability.component';
 import {GenericReportComponent} from './component/generic-report-component';
+import {DataFilterPipe} from './component/data-filter.pipe';
 
 const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -28,7 +29,7 @@ const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
         NgbModule,
         DataTableModule
     ],
-    declarations: [ReportAvailabilityComponent, GenericReportComponent]
+    declarations: [ReportAvailabilityComponent, GenericReportComponent, DataFilterPipe]
 })
 export class ReportAvailabilityModule {
 }
