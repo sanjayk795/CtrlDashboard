@@ -16,7 +16,7 @@
 	</div>
 	</div>
     <div class="row">
-        <table class="table table-striped" [mfData]="reports | dataFilter : filterQuery" #mf="mfDataTable"
+        <table class="table table-striped table-bordered data-report" [mfData]="reports | dataFilter : filterQuery" #mf="mfDataTable"
                [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
             <thead class="tableHeaderRow ">
             <tr>
@@ -48,9 +48,9 @@
 -->
         <tbody>
             <tr *ngFor="let item of data">
-                <td style="padding-bottom: 1px">
-                    <div class="col-md-12">
-                        <div class="col-md-4 padnone" *ngFor="let job of item.jobs">
+                <td style="padding-bottom: 1px" width="45%">
+                    <div >
+                        <div class="tag-box" *ngFor="let job of item.jobs">
                             <div class=" "><div class="ibox-title rcorners1-1 ">
                         <span [ngClass]="{
                            'success': job.jobstatus === 'Completed' ? true : false,

@@ -37,8 +37,8 @@ a,.btn-link{color:#1ab394}
 .btn-success.active,.btn-success:focus,.btn-success:active,.btn-success:hover{background:#0f987c; color:#fff;}
 .login-menu li{margin-left:15px}
 .middle-box{padding:0 30px;}
-.navbar-toggleable-md .main-nav li{margin-left: 30px; line-height:40px }
-.navbar-toggleable-md .main-nav li a{padding:8px 0px; color:#333; position:relative; transition:all 0.3s ease-in-out;}
+.navbar-toggleable-md .main-nav li{margin-left: 20px; line-height:40px }
+.navbar-toggleable-md .main-nav li a{padding:8px 0px; color:#333; position:relative; transition:all 0.3s ease-in-out; }
 .navbar-toggleable-md .main-nav li a:hover{color:#1ab394; text-decoration:none;}
 .navbar-toggleable-md .main-nav li a:after{content:""; height:2px; width:0; bottom:-12px; background:#1ab394; position:absolute; left:0px; transition:all 0.3s ease-in-out;}
 .navbar-toggleable-md .main-nav li a:hover:after,.navbar-toggleable-md .main-nav li a.active:after{width:100%}
@@ -49,3 +49,121 @@ a,.btn-link{color:#1ab394}
 .navbar-toggleable-md .navbar-collapse{width: auto; }
 app-report-availability{margin-bottom:50px; float:left; width:100%; min-height:100vh}
 .table-report{margin-top:-50px}
+.data-report{background:#fff;}
+.table-bordered td, .table-bordered th{border-color: #E9E5E5}
+.data-report td,.data-report th{text-align: center; vertical-align: middle}
+.data-report td{padding:8px 10px}
+.rcorners1-1{    border-radius: 10px;
+    background-color: #F8F8F8;
+    width: 100%;    
+	font-size:13px;
+    text-align: center;
+    padding:10px;
+	margin-bottom:5px;
+	border-radius:0px;
+	border-top:2px #e3e3e5 solid;
+    }
+	.tag-box{width:33%; float:left; padding: 0 5px}
+	/**.padnone{padding:0px;}**/
+.greeniconcolor{color:#008000}
+.yellowiconcolor {color: #E4D446;}
+.rediconcolor {
+    color: red;
+}
+.idanger {
+    background-color: #FFAAAA;
+}
+.isuccess {
+    background-color: #9CED9C;
+}
+
+.data-report .popover.bs-popover-right .arrow {
+    left: -12px;
+	position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.4rem;
+	border-width: 11px;
+}
+.popover {
+    width: 110px;
+}
+.popover-body {
+    padding: 0.5rem 0.75rem;
+    color: #212529;
+}
+.popover-header {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 11px;
+    color: inherit;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+.popOverDisplay {
+    font-size: 10px;
+    width: 20px;
+}
+
+.popover .arrow {
+	left: -12px;
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.4rem;
+	border-width: 11px;
+}
+.popover.bs-popover-right .arrow::before, .popover.bs-popover-auto[x-placement^="right"] .arrow::before {
+    left: -0.8rem;
+    border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover.bs-popover-right .arrow::before, .popover.bs-popover-auto[x-placement^="right"] .arrow::before {
+    left: -0.8rem;
+    border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover .arrow::before {
+    content: "";
+    border-width: 0.8rem;
+	margin-left: 1px;
+}
+.popover .arrow::before, .popover .arrow::after {
+    position: absolute;
+    display: block;
+    border-color: transparent;
+    border-style: solid;
+}
+.popover.bs-popover-right .arrow::after, .popover.bs-popover-auto[x-placement^="right"] .arrow::after {
+    left: calc((0.8rem - 1px) * -1);
+    border-right-color: #fff;
+}
+.popover.bs-popover-right .arrow::before, .popover.bs-popover-auto[x-placement^="right"] .arrow::before, .popover.bs-popover-right .arrow::after, .popover.bs-popover-auto[x-placement^="right"] .arrow::after {
+    margin-top: -0.8rem;
+    border-left-width: 0;
+}
+.popover .arrow::after {
+    content: "";
+    border-width: 0.8rem;
+	top:2px;
+	margin-left: 3px;
+}
+.popover .arrow::before, .popover .arrow::after {
+    position: absolute;
+    display: block;
+    border-color: transparent;
+    border-style: solid;
+}
+.popover>.arrow:after {
+    content: "";
+    border-width: 10px;
+	margin-top: -10px;
+}
+.popover>.arrow, .popover>.arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
