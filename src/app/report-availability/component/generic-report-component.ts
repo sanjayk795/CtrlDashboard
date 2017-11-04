@@ -67,7 +67,6 @@ export class GenericReportComponent implements OnInit {
         this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
         this.onGet();
         this.onSlaCompliance();
-        console.log('I am in GenericReportComponent', this.router.url);
         this.routeUrl = this.router.url;
     }
 
@@ -107,7 +106,7 @@ export class GenericReportComponent implements OnInit {
     }
 
     public onGet(): any[] {
-        this.reportservice.getOffReport(environment.off_report_path, this._uridate).subscribe(
+        this.reportservice.getReport(environment[this.router.url], this._uridate).subscribe(
             (data) => {
                 this.temp = Object.keys(data).map((key) => {
                     return data[key];
@@ -121,7 +120,6 @@ export class GenericReportComponent implements OnInit {
                 }
                 this.rows.forEach((item: any) => {
                     this.jobs.push(item.jobs);
-
                 });
             });
         return this.data;

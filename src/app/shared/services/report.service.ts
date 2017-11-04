@@ -10,7 +10,7 @@ export class ReportService {
     constructor(private apiService: ApiService) {
     }
 
-    getOffReport(url, date): Observable<any> {
+    getReport(url, date): Observable<any> {
         return this.apiService.get(url + '?date=' + date)
             .map((data) => data);
     };
