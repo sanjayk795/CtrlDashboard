@@ -53,11 +53,11 @@ app-report-availability{margin-bottom:50px; float:left; width:100%; min-height:1
 .table-bordered td, .table-bordered th{border-color: #E9E5E5}
 .data-report td,.data-report th{text-align: center; vertical-align: middle}
 .data-report td{padding:8px 10px}
-.rcorners1-1{    border-radius: 10px;
+.rcorners1-1{border-radius: 10px;
     background-color: #F8F8F8;
     width: 100%;    
 	font-size:13px;
-    text-align: center;
+    text-align: left;
     padding:10px;
 	margin-bottom:5px;
 	border-radius:0px;
