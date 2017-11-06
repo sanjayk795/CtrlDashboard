@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Http} from '@angular/http';
 import * as moment from 'moment';
@@ -143,6 +143,7 @@ export class GenericReportComponent implements OnInit {
           }
         );*/
     }
+
     onShow(event, id, reportid){
         //show box msg
         this.reportid = reportid;

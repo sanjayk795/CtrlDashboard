@@ -4,23 +4,23 @@
                          
 				<div id="tab" class="btn-group" data-toggle="buttons-radio">
 				
-                        <a class="btn btn-large btn-success active"
-                           routerLink='off-price'>
+                        <a class="btn btn-large btn-success"
+                           routerLink='off-price' [ngClass]="{'active':routeUrl=='/report-availability/off-price'}">
                             OffPrice
                         </a>
                    
                         <a class="btn btn-large btn-success"
-                           routerLink='full-price'>
+                           routerLink='full-price' [ngClass]="{'active':routeUrl=='/report-availability/full-price'}">
                             FullPrice
                         </a>
                     
                         <a class="btn btn-large btn-success"
-                           routerLink='supply-chain'>
+                           routerLink='supply-chain' [ngClass]="{'active':routeUrl=='/report-availability/supply-chain'}">
                             Supply Chain
                         </a>
                     
                         <a class="btn btn-large btn-success"
-                           routerLink='sales'>
+                           routerLink='sales' [ngClass]="{'active':routeUrl=='/report-availability/sales'}">
                             Sales
                         </a>
                                 
@@ -28,7 +28,6 @@
                 
             
         </div>
-
     </div>
 
 <router-outlet></router-outlet>
