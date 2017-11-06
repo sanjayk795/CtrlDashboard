@@ -13,6 +13,7 @@ import {ReportAvailabilityModule} from './report-availability/report-availabilit
 import {CertifiedReportModule} from './certified-report/certified-report.module';
 import {TrainingModule} from './training/training.module';
 import {SelfserviceReportModule} from './selfservice-report/selfservice-report.module';
+import {ChartModule} from 'primeng/primeng';
 
 import {
     ApiService,
@@ -48,7 +49,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: fals
         ReportAvailabilityModule,
         CertifiedReportModule,
         TrainingModule,
-        SelfserviceReportModule
+        SelfserviceReportModule,
+        ChartModule
     ],
     providers: [
         ApiService,

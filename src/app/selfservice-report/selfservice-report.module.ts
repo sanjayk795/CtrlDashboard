@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AuthGuard, SharedModule} from '../shared';
 import {SelfserviceReportComponent} from './selfservice-report.component';
+import {ChartModule} from 'primeng/primeng';
 
 const serlServiceReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -15,7 +16,8 @@ const serlServiceReportRouting: ModuleWithProviders = RouterModule.forChild([
     imports: [
         CommonModule,
         SharedModule,
-        serlServiceReportRouting
+        serlServiceReportRouting,
+        ChartModule
     ],
     declarations: [SelfserviceReportComponent]
 })
