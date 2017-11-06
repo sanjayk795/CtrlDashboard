@@ -47,7 +47,7 @@ a,.btn-link{color:#1ab394}
 .navbar-toggleable-md .main-nav li a.btn-secondary:after{display:none;}
 .navbar.navbar-toggleable-md{padding:10px 0px;}
 .navbar-toggleable-md .navbar-collapse{width: auto; }
-app-report-availability{margin-bottom:50px; float:left; width:100%; min-height:100vh}
+/***app-report-availability{margin-bottom:50px; float:left; width:100%; min-height:100vh}***/
 .table-report{margin-top:-50px}
 .data-report{background:#fff;}
 .table-bordered td, .table-bordered th{border-color: #E9E5E5}
