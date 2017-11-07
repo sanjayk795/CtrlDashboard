@@ -11,17 +11,17 @@ export class ReportService {
     }
 
     getReport(url, date): Observable<any> {
-        return this.apiService.get(url + '?date=' + date)
+        return this.apiService.get(url + date+'/')
             .map((data) => data);
     };
 
     getSlaCompliance(url, date): Observable<any> {
-        return this.apiService.get(url + '?date=' + date)
+        return this.apiService.get(url + date+'/')
             .map((data) => data);
     };
 
     getPlannedOut(url, date): Observable<any> {
-        return this.apiService.get(url + '?date=' + date)
+        return this.apiService.get(url + date+'/')
             .map((data) => data);
     };
 }
