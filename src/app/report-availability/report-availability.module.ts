@@ -5,20 +5,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {DataTableModule} from 'angular2-datatable';
 import {AuthGuard, SharedModule} from '../shared';
 import {ReportAvailabilityComponent} from './report-availability.component';
-import {GenericReportComponent} from './component/generic-report-component';
-import {DataFilterPipe} from './component/data-filter.pipe';
 
 const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'report-availability',
-        component: ReportAvailabilityComponent,
-        children: [
-            { path: 'off-price', component:  GenericReportComponent},
-            { path: 'full-price', component: GenericReportComponent },
-            { path: 'supply-chain', component: GenericReportComponent },
-            { path: 'sales', component: GenericReportComponent },
-        ]
-    },
+        component: ReportAvailabilityComponent
+    }
 ]);
 
 @NgModule({
@@ -29,7 +21,7 @@ const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
         NgbModule,
         DataTableModule
     ],
-    declarations: [ReportAvailabilityComponent, GenericReportComponent, DataFilterPipe]
+    declarations: [ReportAvailabilityComponent]
 })
 export class ReportAvailabilityModule {
 }

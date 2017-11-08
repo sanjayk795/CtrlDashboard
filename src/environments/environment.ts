@@ -6,6 +6,7 @@
 export const environment = {
     "production": false,
     "api_url": 'http://localhost:8000/assets/mock',
+    "/report-availability": '/report-availability/off-price.json?date=',
     "/report-availability/off-price": '/report-availability/off-price.json?date=',
     "/report-availability/full-price": '/report-availability/full-price.json?date=',
     "/report-availability/supply-chain": '/report-availability/supply-chain.json?date=',
