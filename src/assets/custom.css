@@ -37,7 +37,8 @@ a,.btn-link{color:#1ab394}
 .btn-success.active,.btn-success:focus,.btn-success:active,.btn-success:hover{background:#0f987c; color:#fff;}
 .login-menu li{margin-left:15px}
 .middle-box{padding:0 30px;}
-.navbar-toggleable-md .main-nav li{margin-left: 30px; line-height:40px }
+.navbar-toggleable-md .main-nav li{padding-right: 15px; padding-left:15px; line-height:40px; background:url(images/menu-sep.png) no-repeat right 10px}
+.navbar-toggleable-md .main-nav li:last-child{padding-right:0px;}
 .navbar-toggleable-md .main-nav li a{padding:8px 0px; color:#333; position:relative; transition:all 0.3s ease-in-out; }
 .navbar-toggleable-md .main-nav li a:hover{color:#1ab394; text-decoration:none;}
 .navbar-toggleable-md .main-nav li a:after{content:""; height:2px; width:0; bottom:-12px; background:#1ab394; position:absolute; left:0px; transition:all 0.3s ease-in-out;}
@@ -58,7 +59,7 @@ a,.btn-link{color:#1ab394}
     width: 100%;    
 	font-size:13px;
     text-align: left;
-    padding:10px;
+    padding:10px; 
 	margin-bottom:5px;
 	border-radius:0px;
 	border-top:2px #e3e3e5 solid;
