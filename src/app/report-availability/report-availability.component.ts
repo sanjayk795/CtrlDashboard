@@ -1,6 +1,5 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import {Router, Route, ActivatedRoute} from "@angular/router";
-import {Http} from '@angular/http';
+import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 import * as moment from 'moment';
 import { environment } from '../../environments/environment'
 import {ReportService} from '../shared/services/report.service';
@@ -15,59 +14,22 @@ const now = new Date();
 export class ReportAvailabilityComponent {
     routeUrl: string;
     model: any;
-    date: { year: number, month: number, day: number };
     selectedDate;
     slaData;
-    dateObservable;
-    public filterQuery = '';
-    public rowsOnPage = 10;
-    public sortBy = 'reportname';
-    public sortOrder = 'asc';
     public _uridate;
     public alerts = [];
     public alert = [];
-    public rows: Array<any> = [];
-    public columns: Array<any> = [
-        {title: 'JobName', name: 'jobs', filtering: {filterString: '', placeholder: 'Filter by jobname'}},
-        {
-            title: 'ReportName',
-            name: 'reportname',
-            sort: false,
-            filtering: {filterString: '', placeholder: 'Filter by ReportName'}
-        },
-        {title: 'Source', className: ['source-header', 'text-success'], name: 'source', sort: 'asc'},
-        {title: 'SLA', name: 'sla_achieved', sort: '', filtering: {filterString: '', placeholder: 'Filter by SLA'}},
-        {title: 'Actual', className: 'text-warning', name: 'reportstatus'},
-        {title: 'ETA (!)', name: 'reportendtime'}
-    ];
-    public page: number = 1;
-    public itemsPerPage: number = 10;
-    public maxSize: number = 5;
-    public numPages: number = 1;
-    public length: number = 0;
-    public reportData;
-    public config: any = {
-        paging: true,
-        sorting: {columns: this.columns},
-        filtering: {filterString: ''},
-        className: ['table-striped', 'table-bordered']
-    };
-    public reports = [];
     public data: Array<any> = [];
-    changeLog = [];
     public temp;
-    public rtemp;
-    public jobs: Array<any>[] = [];
     jobid: number;
     reportid: number;
     public edited = false;
 
-    public constructor(private reportservice: ReportService, private route: ActivatedRoute,
-                       private http: Http, private router: Router) {
+    public constructor(private reportservice: ReportService, private router: Router) {
 
         this._uridate = this.getSelectedDate();
         this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
-        this.onGet();
+        this.onGet()
         this.onSlaCompliance();
         this.routeUrl = this.router.url;
     }
@@ -96,37 +58,29 @@ export class ReportAvailabilityComponent {
 
     update(event: any) {
         this._uridate = event.year + '-' + event.month + '-' + event.day;
-        this.onGet();
-        this.onSlaCompliance();
-        this.onPlannedOut();
-        this.getSelectedDate();
+        this.onGet().then(function (res) {
+            this.onSlaCompliance();
+        }).then(function (res) {
+            this.onPlannedOut();
+        }).then(function (res) {
+            this.getSelectedDate();
+        }).catch(function (err) {
+            console.log(err);
+        });
     }
 
     public getPlacement(): string {
         return window.innerHeight <= 300 ? 'top' : 'right';
-
     }
 
-    public onGet(): any[] {
-        console.log('==============', this.router.url);
+    public onGet(): any {
         this.reportservice.getReport(environment[this.router.url], this._uridate).subscribe(
             (data) => {
                 this.temp = Object.keys(data).map((key) => {
                     return data[key];
                 });
-                this.rtemp = this.temp[2];
-                this.reports = this.rtemp;
-                this.data = this.reports;
-                this.length = this.data.length;
-                for (const report of this.data) {
-                    this.rows.push(report);
-                }
-                this.rows.forEach((item: any) => {
-                    this.jobs.push(item.jobs);
-                });
+                this.data = this.temp[2];
             });
-        return this.data;
-
     }
 
     public onSlaCompliance() {
@@ -147,7 +101,7 @@ export class ReportAvailabilityComponent {
         );*/
     }
 
-    onShow(event, id, reportid){
+   /* onShow(event, id, reportid){
         //show box msg
         this.reportid = reportid;
         this.jobid = id;
@@ -157,16 +111,15 @@ export class ReportAvailabilityComponent {
             this.edited = false;
             console.log(this.edited);
         }.bind(this), 30000);
-    }
+    }*/
 
     onHide(){
         this.edited = false;
     }
 
-    setReportCall (path) {
-        console.log('going to hit data from', path);
+    setReportCall(path) {
+        console.log("------------------", path);
     }
-
 }
 
 export interface IAlert {
