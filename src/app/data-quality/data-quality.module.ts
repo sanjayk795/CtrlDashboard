@@ -7,7 +7,8 @@ import {DataQualityComponent} from './data-quality.component';
 const dataQualityRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'data-quality',
-        component: DataQualityComponent
+        component: DataQualityComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 

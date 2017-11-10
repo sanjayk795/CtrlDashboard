@@ -3,11 +3,13 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AuthGuard, SharedModule} from '../shared';
 import {CertifiedReportComponent} from './certified-report.component';
+import {CertifiedReportAuthResolver} from './certifiedReport-auth-resolver.service';
 
 const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'certified-report',
-        component: CertifiedReportComponent
+        component: CertifiedReportComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 
@@ -17,7 +19,10 @@ const certifiedReportRouting: ModuleWithProviders = RouterModule.forChild([
         SharedModule,
         certifiedReportRouting
     ],
-    declarations: [CertifiedReportComponent]
+    declarations: [CertifiedReportComponent],
+    providers: [
+        CertifiedReportAuthResolver
+    ]
 })
 export class CertifiedReportModule {
 }

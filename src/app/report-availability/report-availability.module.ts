@@ -9,7 +9,8 @@ import {ReportAvailabilityComponent} from './report-availability.component';
 const reportAvailabilityRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'report-availability',
-        component: ReportAvailabilityComponent
+        component: ReportAvailabilityComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 

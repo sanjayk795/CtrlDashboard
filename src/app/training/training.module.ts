@@ -7,7 +7,8 @@ import {TrainingComponent} from './training.component';
 const trainingRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'training',
-        component: TrainingComponent
+        component: TrainingComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 

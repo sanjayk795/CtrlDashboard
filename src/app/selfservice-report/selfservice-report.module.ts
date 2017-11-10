@@ -8,7 +8,8 @@ import {ChartModule} from 'primeng/primeng';
 const serlServiceReportRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'selfservice-report',
-        component: SelfserviceReportComponent
+        component: SelfserviceReportComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 

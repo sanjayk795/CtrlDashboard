@@ -7,7 +7,8 @@ import {DataDictionaryComponent} from './data-dictionary.component';
 const dataDictionaryRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'data-dictionary',
-        component: DataDictionaryComponent
+        component: DataDictionaryComponent,
+        canActivate:[AuthGuard]
     }
 ]);
 
