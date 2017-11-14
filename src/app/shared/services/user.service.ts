@@ -44,7 +44,7 @@ export class UserService {
 
   setAuth(user: User) {
     // Save JWT sent from server in localstorage
-    this.jwtService.saveToken(user.token);
+    //this.jwtService.saveToken(user.token);
     this.jwtService.setCurrentUser(user);
     // Set current user data into observable
     this.currentUserSubject.next(user);
@@ -65,7 +65,8 @@ export class UserService {
     return this.apiService.get(environment.login_path)
     .map(
       data => {
-        this.setAuth(data.user);
+        console.log(data[0]);
+        this.setAuth(data[0]);
         return data;
       }
     );

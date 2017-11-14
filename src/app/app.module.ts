@@ -31,7 +31,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
         path: '**',
         redirectTo: 'login',
         pathMatch: 'full'
-    },
+    }
 ], {useHash: false});
 
 @NgModule({

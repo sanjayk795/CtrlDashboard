@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-      if (localStorage.getItem('jwtToken')) {
+      if (localStorage.getItem('ctrl-user')) {
           return this.userService.isAuthenticated.take(1);
       }
       this.router.navigate(['login']);

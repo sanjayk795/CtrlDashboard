@@ -18,8 +18,9 @@ export class JwtService {
     }
 
     setCurrentUser(User) {
-        window.localStorage['landingPage'] = User.landingPage;
-        localStorage.setItem('dashboards', JSON.stringify(User.dashboards));
+        //swindow.localStorage['landingPage'] = User.landingPage;
+        window.localStorage['ctrl-user'] = User.username;
+        // localStorage.setItem('dashboards', JSON.stringify(User.dashboards));
     }
 
     getCurrentUser() {
