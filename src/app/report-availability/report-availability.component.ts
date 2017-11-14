@@ -58,15 +58,10 @@ export class ReportAvailabilityComponent {
 
     update(event: any) {
         this._uridate = event.year + '-' + event.month + '-' + event.day;
-        this.onGet().then(function (res) {
-            this.onSlaCompliance();
-        }).then(function (res) {
-            this.onPlannedOut();
-        }).then(function (res) {
-            this.getSelectedDate();
-        }).catch(function (err) {
-            console.log(err);
-        });
+        this.onGet()
+        this.onSlaCompliance()
+        this.onPlannedOut()
+        this.getSelectedDate()
     }
 
     public getPlacement(): string {

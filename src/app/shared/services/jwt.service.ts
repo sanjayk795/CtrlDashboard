@@ -11,6 +11,7 @@ export class JwtService {
 
     saveToken(token: String) {
         window.localStorage['jwtToken'] = token;
+        window.localStorage['ctrl-user'] = token;
     }
 
     destroyToken() {

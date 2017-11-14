@@ -33,7 +33,7 @@ export class UserService {
     if (this.jwtService.getToken()) {
       this.apiService.get(environment.login_auth_path)
       .subscribe(
-        data => this.setAuth(data.user),
+        data => this.setAuth(data[0]),
         err => this.purgeAuth()
       );
     } else {
@@ -44,7 +44,7 @@ export class UserService {
 
   setAuth(user: User) {
     // Save JWT sent from server in localstorage
-    //this.jwtService.saveToken(user.token);
+    this.jwtService.saveToken(user.username);
     this.jwtService.setCurrentUser(user);
     // Set current user data into observable
     this.currentUserSubject.next(user);
@@ -62,14 +62,24 @@ export class UserService {
   }
 
   attemptAuth(type, credentials): Observable<User> {
-    return this.apiService.get(environment.login_path)
-    .map(
-      data => {
-        console.log(data[0]);
-        this.setAuth(data[0]);
-        return data;
+    if(environment.production == true) {
+        var url = environment.login_path + credentials.email + '/'+ credentials.password;
+        return this.apiService.get(url)
+            .map(
+                data => {
+                    this.setAuth(data[0]);
+                    return data;
+                }
+            );
+    } else {
+        return this.apiService.get(environment.login_path)
+            .map(
+                data => {
+                    this.setAuth(data[0]);
+                    return data;
+                }
+            );
       }
-    );
   }
 
   getCurrentUser(): User {
